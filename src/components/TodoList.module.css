@@ -369,3 +369,29 @@
 .infoModal button:hover {
 	background-color: rgb(55, 55, 55);
 }
+
+@media only screen and (max-width: 768px) {
+	.app {
+		color: black;
+	}
+
+	.infoModal {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 90vw;
+		max-width: 600px;
+		max-height: 70vh;
+		background: white;
+		border-radius: 8px;
+		overflow-y: auto;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.infoModal__buttonContainer {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+}
