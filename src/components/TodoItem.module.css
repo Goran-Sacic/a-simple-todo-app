@@ -139,3 +139,12 @@
 		transform: scale(1.2);
 	}
 }
+
+@media only screen and (max-width: 768px) {
+	.todo-item__checkbox {
+		color: black;
+	}
+	.todo-item__edit-input {
+		color: black;
+	}
+}

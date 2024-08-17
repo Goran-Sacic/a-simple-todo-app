@@ -374,7 +374,9 @@
 	.app {
 		color: black;
 	}
-
+	.form__input {
+		color: black;
+	}
 	.infoModal {
 		position: fixed;
 		top: 50%;
@@ -388,10 +390,12 @@
 		overflow-y: auto;
 		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	}
-
 	.infoModal__buttonContainer {
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
+	}
+	.apiForm__input {
+		color: black;
 	}
 }
