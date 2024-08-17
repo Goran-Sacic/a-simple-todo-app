@@ -48,45 +48,6 @@ const TodoItem = ({
 		}
 	};
 
-	/* return (
-		<div className={styles.todoItem}>
-			<div className={styles.checkboxAndTodo}>
-				<button className={styles.todoButton} onClick={() => toggleCompleted()}>
-					{todo.completed ? '✔' : ''}
-				</button>
-
-				{!editing && (
-					<li
-						className={`${todo.completed ? styles.todoCompleted : ''} ${todo.userId !== undefined ? styles.todoFromAPI : ''}`}
-					>
-						{todo.todo}
-					</li>
-				)}
-				{editing && (
-					<input
-						type='text'
-						value={newTodoName}
-						className={`${styles.editTodo} ${todo.userId !== undefined ? styles.todoFromAPI : ''}`}
-						onChange={handleChange}
-						onKeyDown={handleEditingDone}
-						onBlur={handleBlur}
-						autoFocus
-					/>
-				)}
-			</div>
-			<div className={styles.buttonContainer}>
-				<button
-					className={`${styles.editButton} ${todo.completed ? styles.editCompleted : ''} `}
-					disabled={todo.completed}
-					onClick={handleEditing}
-				></button>
-				<button
-					className={styles.deleteButton}
-					onClick={() => handleDeleteTodo()}
-				></button>
-			</div>
-		</div>
-	); */
 	return (
 		<div className={styles['todo-item']}>
 			<div className={styles['todo-item__content']}>
