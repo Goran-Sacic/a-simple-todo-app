@@ -9,10 +9,10 @@ In order to test the app, you can utilize the following procedures:
 - Visit the app at [https://a-simple-todo-app-gs.netlify.app/](https://a-simple-todo-app-gs.netlify.app/).
 
 - For developers, open your IDE and use the following commands:
-  git clone https://github.com/Goran-Sacic/a-simple-todo-app.git
-  npm i
-  npm run dev
-  open app at http://localhost:5173/
+  - git clone https://github.com/Goran-Sacic/a-simple-todo-app.git
+  - npm i
+  - npm run dev
+  - open app at http://localhost:5173/
 
 ## Features
 

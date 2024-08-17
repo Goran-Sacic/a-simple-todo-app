@@ -25,19 +25,24 @@ const TodoList = ({ handleScrollBarVisible }: any) => {
 	const [showInfo, setShowInfo] = useState<boolean>(false);
 
 	useEffect(() => {
-		const storedTodos = localStorage.getItem('todoer-todos');
-		const storedDeletedTodos = localStorage.getItem('todoer-deletedtodos');
-		if (!storedTodos && !storedDeletedTodos) {
-			PlaceInitialTodosInLocalStorage();
-		}
-		if (storedTodos) {
-			const parsedTodos = JSON.parse(storedTodos);
-			setTodoList(parsedTodos);
-		}
-		if (storedDeletedTodos) {
-			const parsedDeletedTodos = JSON.parse(storedDeletedTodos);
-			setDeletedTodoList(parsedDeletedTodos);
-		}
+		console.log('Effect running');
+
+		const initializeTodos = async () => {
+			const storedTodos = localStorage.getItem('todoer-todos');
+			const storedDeletedTodos = localStorage.getItem('todoer-deletedtodos');
+			if (!storedTodos && !storedDeletedTodos) {
+				PlaceInitialTodosInLocalStorage();
+			}
+			if (storedTodos) {
+				const parsedTodos = JSON.parse(storedTodos);
+				setTodoList(parsedTodos);
+			}
+			if (storedDeletedTodos) {
+				const parsedDeletedTodos = JSON.parse(storedDeletedTodos);
+				setDeletedTodoList(parsedDeletedTodos);
+			}
+		};
+		initializeTodos();
 	}, []);
 
 	const handleTodoItemEntry = (
@@ -179,14 +184,17 @@ const TodoList = ({ handleScrollBarVisible }: any) => {
 	};
 
 	const handleDeleteAllTodos = () => {
-		setDeletedTodoList(deletedTodoList.concat(todoList));
-		localStorage.setItem(
-			'todoer-deletedtodos',
-			JSON.stringify(deletedTodoList)
-		);
+		const newlyDeletedTodos = [...todoList];
 		setTodoList([]);
 		localStorage.removeItem('todoer-todos');
-		/* PlaceInitialTodosInLocalStorage(); */
+		setDeletedTodoList((prevDeletedTodos) => {
+			const updatedDeletedTodos = prevDeletedTodos.concat(newlyDeletedTodos);
+			localStorage.setItem(
+				'todoer-deletedtodos',
+				JSON.stringify(updatedDeletedTodos)
+			);
+			return updatedDeletedTodos;
+		});
 	};
 
 	const returnTodoToTodoList = (id: string) => {
