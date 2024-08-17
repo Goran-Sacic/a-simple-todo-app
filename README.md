@@ -10,6 +10,7 @@ In order to test the app, you can utilize the following procedures:
 
 - For developers, open your IDE and use the following commands:
   - git clone https://github.com/Goran-Sacic/a-simple-todo-app.git
+  - cd a-simple-todo-app
   - npm i
   - npm run dev
   - open app at http://localhost:5173/
