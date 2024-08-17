@@ -10,8 +10,6 @@ export interface Task {
 }
 
 function App() {
-	console.log('Welcome to ToDo app - made by Goran Sačić!');
-
 	const [scrollBarVisible, setScrollBarVisible] = useState<boolean>(false);
 
 	const handleScrollToTop = () => {
