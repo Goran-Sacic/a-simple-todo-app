@@ -27,6 +27,9 @@ const TodoList = ({ handleScrollBarVisible }: any) => {
 	useEffect(() => {
 		const storedTodos = localStorage.getItem('todoer-todos');
 		const storedDeletedTodos = localStorage.getItem('todoer-deletedtodos');
+		if (!storedTodos && !storedDeletedTodos) {
+			PlaceInitialTodosInLocalStorage();
+		}
 		if (storedTodos) {
 			const parsedTodos = JSON.parse(storedTodos);
 			setTodoList(parsedTodos);
@@ -34,9 +37,6 @@ const TodoList = ({ handleScrollBarVisible }: any) => {
 		if (storedDeletedTodos) {
 			const parsedDeletedTodos = JSON.parse(storedDeletedTodos);
 			setDeletedTodoList(parsedDeletedTodos);
-		}
-		if (!storedTodos && !storedDeletedTodos) {
-			PlaceInitialTodosInLocalStorage();
 		}
 	}, []);
 
