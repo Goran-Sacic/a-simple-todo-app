@@ -1,0 +1,371 @@
+.app {
+	max-width: 700px;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(240, 242, 255);
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 5px;
+	filter: drop-shadow(5px 5px 20px #565657);
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.app__title {
+	text-align: center;
+}
+
+.app__header {
+	width: 71.5%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.app__header__invisible {
+	visibility: hidden;
+}
+
+.app__header__info button {
+	width: 20px;
+	height: 20px;
+	margin: 2px;
+	cursor: pointer;
+	background-color: rgb(240, 242, 255);
+	background-image: url('../assets/info-icon.png');
+	background-size: cover;
+	background-position: center;
+	opacity: 100%;
+	border: none;
+	transform: scale(1);
+	transition:
+		transform 0.1s ease,
+		opacity 0.2s ease;
+}
+
+.app__header__info button:hover {
+	transform: scale(1.4);
+	opacity: 0.8;
+}
+
+.form {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	list-style-type: none;
+	align-items: center;
+	height: 120px;
+	max-width: 500px;
+	width: 80.5%;
+}
+
+.form__label {
+	margin-bottom: 5px;
+}
+
+.form__input {
+	height: 40px;
+	width: 100%;
+	padding: 0;
+	margin-bottom: 2px;
+	border: none;
+	border: 1px solid black;
+	padding-left: 5px;
+	background-color: rgb(251, 251, 253);
+	font-family: inherit;
+	font-size: inherit;
+}
+
+.form__button {
+	width: 100%;
+	height: 30px;
+	background-color: black;
+	color: white;
+	padding: 0;
+	border: none;
+	cursor: pointer;
+}
+
+.form__button:hover {
+	background-color: rgb(55, 55, 55);
+}
+
+.form__error {
+	width: 100%;
+	text-align: left;
+	color: red;
+	padding-top: 2px;
+}
+
+.taskDisplay {
+	display: flex;
+	align-items: right;
+	width: 71.5%;
+	justify-content: right;
+	margin-bottom: 5px;
+}
+
+.taskDisplay__options {
+	position: relative;
+	display: inline-block;
+}
+
+.taskDisplay__options select {
+	width: 150px;
+	padding: 2px;
+	padding-left: 5px;
+	border-radius: 2px;
+	border: 2px solid #000000;
+	background-color: #f9f9f9;
+	font-size: 14px;
+	color: #333;
+	cursor: pointer;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-align: left;
+}
+
+.taskDisplay__options select:focus {
+	outline: none;
+	border-color: #444444;
+	box-shadow: 0 0 5px rgba(78, 78, 78, 0.5);
+}
+
+.taskDisplay__options::after {
+	content: '▼';
+	font-size: 12px;
+	color: #333;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	pointer-events: none;
+}
+
+.taskDisplay__options select:hover {
+	background-color: #e0e0e0;
+}
+
+.taskDisplay__options option {
+	padding: 10px;
+	background-color: #ffffff;
+	color: #333;
+}
+
+.taskDisplay__options select option:checked {
+	background-color: #e0e0e0;
+	color: black;
+}
+
+.taskDisplay__options select option:hover {
+	background-color: white;
+}
+
+.todos {
+	max-width: 500px;
+	width: 80.5%;
+}
+
+.todos__emptyMessage {
+	margin: 20px;
+	text-align: center;
+}
+
+.todos__list {
+	margin-top: 30px;
+	max-width: 500px;
+	width: 100%;
+}
+
+.deletedTodos {
+	min-width: 400px;
+	width: 71.5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.deletedTodos__emptyMessage {
+	margin: 20px;
+	text-align: center;
+}
+
+.deletedTodos__list {
+	width: 100%;
+}
+
+.deletedTodos__clearButton {
+	background-color: black;
+	color: white;
+	border: none;
+	cursor: pointer;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	padding: 10px 20px;
+	border-radius: 2px;
+	text-align: center;
+}
+
+.deletedTodos__clearButton:hover {
+	background-color: rgb(55, 55, 55);
+	margin-bottom: 10px;
+}
+
+.completedTasks {
+	margin: 10px;
+}
+
+.optionsContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 71%;
+	margin: 10px;
+	margin-top: 10px;
+}
+
+.optionsContainer button {
+	width: 45%;
+	height: 30px;
+	background-color: black;
+	color: white;
+	border: none;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+
+.optionsContainer button:hover {
+	background-color: rgb(55, 55, 55);
+}
+
+.apiForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 80px;
+	max-width: 500px;
+	width: 80.5%;
+	gap: 5px;
+}
+
+/* .apiForm__label {
+	display: flex;
+	flex-direction: column;
+} */
+
+.apiForm__input {
+	height: 30px;
+	width: 20%;
+	border: none;
+	border: 1px solid black;
+	margin-left: 3px;
+	text-align: center;
+	border-radius: 2px;
+	background-color: rgb(251, 251, 253);
+}
+
+.apiForm__button {
+	width: 40%;
+	height: 30px;
+	background-color: black;
+	color: white;
+	border: none;
+	cursor: pointer;
+	margin-left: 3px;
+}
+
+.apiForm__button:hover {
+	background-color: rgb(55, 55, 55);
+}
+
+.statusMessage {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: 71%;
+}
+
+.statusMessage button {
+	width: 10%;
+	height: 30px;
+	background-color: black;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+.statusMessage button:hover {
+	background-color: rgb(55, 55, 55);
+}
+
+.infoModalOverlay {
+	position: fixed;
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(5px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 999;
+}
+
+.infoModal {
+	background-color: rgb(240, 242, 255);
+	padding: 20px;
+	border-radius: 2px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	position: relative;
+	z-index: 1000;
+	max-width: 90%;
+	width: 700px;
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+}
+
+.infoModal p {
+	margin: 5px;
+	font-size: 22px;
+}
+
+.infoModal ul {
+	margin: 5px;
+	padding-left: 15px;
+}
+
+.infoModal li {
+	margin: 5px;
+	font-size: 17px;
+}
+
+.infoModal__buttonContainer {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-around;
+}
+
+.infoModal button {
+	background-color: #000000;
+	color: white;
+	border: none;
+	margin-top: 10px;
+	padding: 10px 20px;
+	border-radius: 2px;
+	cursor: pointer;
+	width: 30%;
+}
+
+.infoModal button:hover {
+	background-color: rgb(55, 55, 55);
+}

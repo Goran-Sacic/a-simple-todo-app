@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+	/* font-family: 'Anek Devanagari', sans-serif;
+	line-height: 1.5;
+	font-weight: 400; */
+	color-scheme: light dark;
+	/* color: rgba(0, 0, 0, 0.87); */
+	/* border: 1px solid yellow; */
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	background-color: rgb(152, 163, 255);
+	width: 100vw;
+	height: 100%;
+	margin: 0 auto;
+}
+
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}

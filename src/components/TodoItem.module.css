@@ -1,0 +1,141 @@
+.todo-item {
+	list-style-type: none;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	height: 40px;
+	justify-content: space-between;
+	max-width: 500px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-top: 10px;
+	padding: 0;
+	background-color: rgb(240, 242, 255);
+	border-bottom: 1px solid grey;
+	width: 100%;
+}
+
+.todo-item__content {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	width: 80%;
+}
+
+.todo-item__text {
+	max-width: 420px;
+	width: 95%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	padding-left: 3px;
+}
+
+.todo-item__edit-input {
+	max-width: 420px;
+	width: 95%;
+	height: 30px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	background-color: rgb(240, 242, 255);
+	outline: none;
+	border: 1px solid black;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+.todo-item__button-container {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+	width: 15%;
+	height: 100%;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.todo-item__checkbox {
+	width: 30px;
+	height: 30px;
+	margin: 2px;
+	border: 1px solid black;
+	cursor: pointer;
+	background-color: rgb(240, 242, 255);
+	transition: transform 0.1s ease;
+}
+
+.todo-item__checkbox:hover {
+	transform: scale(1.1);
+}
+
+.todo-item__delete-button {
+	width: 20px;
+	height: 20px;
+	border: 1px solid black;
+	cursor: pointer;
+	background-color: rgb(240, 242, 255);
+	background-image: url('../assets/trash-icon.png');
+	background-size: cover;
+	background-position: center;
+	opacity: 100%;
+	border: none;
+	transform: scale(1);
+	transition:
+		transform 0.1s ease,
+		opacity 0.2s ease;
+}
+
+.todo-item__delete-button:hover {
+	transform: scale(1.4);
+	opacity: 0.8;
+}
+
+.todo-item__edit-button {
+	width: 20px;
+	height: 20px;
+	border: 1px solid black;
+	cursor: pointer;
+	background-color: rgb(240, 242, 255);
+	background-image: url('../assets/edit-icon.png');
+	background-size: cover;
+	background-position: center;
+	opacity: 100%;
+	border: none;
+	transform: scale(1);
+	transition:
+		transform 0.1s ease,
+		opacity 0.2s ease;
+}
+
+.todo-item__edit-button:hover {
+	transform: scale(1.4);
+	opacity: 0.8;
+}
+
+.todo-item__edit-button--completed {
+	opacity: 20%;
+}
+
+.todo-item__edit-button--completed:hover {
+	transform: none;
+	transition: none;
+	opacity: 20%;
+}
+
+.todo-item__text--completed {
+	text-decoration: line-through;
+	opacity: 50%;
+}
+
+.todo-item__text--from-api {
+	color: blue;
+}
+
+@keyframes scale {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.2);
+	}
+}
