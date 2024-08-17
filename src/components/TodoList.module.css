@@ -390,7 +390,6 @@
 		overflow-y: auto;
 		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	}
-
 	.infoModal__buttonContainer {
 		display: flex;
 		justify-content: space-around;
@@ -398,5 +397,17 @@
 	}
 	.apiForm__input {
 		color: black;
+	}
+	.apiForm__button:hover {
+		background-color: rgb(61, 66, 110);
+	}
+	.form__button:hover {
+		background-color: rgb(61, 66, 110);
+	}
+	.optionsContainer button:hover {
+		background-color: rgb(61, 66, 110);
+	}
+	.infoModal__buttonContainer button:hover {
+		background-color: rgb(61, 66, 110);
 	}
 }
