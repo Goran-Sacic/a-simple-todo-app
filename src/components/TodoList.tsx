@@ -25,24 +25,19 @@ const TodoList = ({ handleScrollBarVisible }: any) => {
 	const [showInfo, setShowInfo] = useState<boolean>(false);
 
 	useEffect(() => {
-		console.log('Effect running');
-
-		const initializeTodos = async () => {
-			const storedTodos = localStorage.getItem('todoer-todos');
-			const storedDeletedTodos = localStorage.getItem('todoer-deletedtodos');
-			if (!storedTodos && !storedDeletedTodos) {
-				PlaceInitialTodosInLocalStorage();
-			}
-			if (storedTodos) {
-				const parsedTodos = JSON.parse(storedTodos);
-				setTodoList(parsedTodos);
-			}
-			if (storedDeletedTodos) {
-				const parsedDeletedTodos = JSON.parse(storedDeletedTodos);
-				setDeletedTodoList(parsedDeletedTodos);
-			}
-		};
-		initializeTodos();
+		const storedTodos = localStorage.getItem('todoer-todos');
+		const storedDeletedTodos = localStorage.getItem('todoer-deletedtodos');
+		if (!storedTodos && !storedDeletedTodos) {
+			PlaceInitialTodosInLocalStorage();
+		}
+		if (storedTodos) {
+			const parsedTodos = JSON.parse(storedTodos);
+			setTodoList(parsedTodos);
+		}
+		if (storedDeletedTodos) {
+			const parsedDeletedTodos = JSON.parse(storedDeletedTodos);
+			setDeletedTodoList(parsedDeletedTodos);
+		}
 	}, []);
 
 	const handleTodoItemEntry = (
@@ -444,9 +439,9 @@ const TodoList = ({ handleScrollBarVisible }: any) => {
 						<p>Welcome to a simple ToDo app! Here are some tips:</p>
 						<ul>
 							<li>
-								On first app start,{' '}
+								On app start,{' '}
 								<span style={{ color: 'blue' }}>three default tasks</span> are
-								always displayed. By pressing{' '}
+								displayed. By pressing{' '}
 								<span style={{ fontWeight: 'bold' }}>'Reset'</span> button app
 								reverts to default state.
 							</li>
